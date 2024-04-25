@@ -3,9 +3,9 @@
 import fs from 'fs';
 import path from 'path';
 
-import { createFile } from './utils/create-file';
-import { detectAppDirectory } from './utils/detect-app-directory';
-import { detectFlag } from './utils/detect-flags';
+import { createFile } from './utils/create-file.js';
+import { detectAppDirectory } from './utils/detect-app-directory.js';
+import { detectFlag } from './utils/detect-flags.js';
 
 const dirName = process.argv[2];
 
