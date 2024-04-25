@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "CLI tool for quickly creating folder based routes in NextJs.",
   "type": "module",
-  "main": "index.js",
-  "bin": "index.js",
+  "main": "dist/src/index.js",
+  "bin": "dist/src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
