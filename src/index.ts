@@ -41,9 +41,9 @@ try {
     createFile(directoryPath, 'loading');
   }
 
-  spinner.success({ text: '✅ Success!' });
+  spinner.success({ text: ' Success!' });
 } catch (error) {
-  spinner.error({ text: 'Oops! Something went wrong!' });
+  spinner.error({ text: ' Oops! Something went wrong!' });
   process.exit(1);
 }
 
