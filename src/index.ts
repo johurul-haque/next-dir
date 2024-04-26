@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
 import fs from 'fs';
+import { createSpinner } from 'nanospinner';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-import { createFile } from './utils/create-file.js';
 import { detectAppDirectory } from './utils/detect-app-directory.js';
 import { detectFlag } from './utils/detect-flags.js';
 
@@ -28,16 +29,38 @@ if (fs.existsSync(directoryPath)) {
   process.exit(1);
 }
 
+const spinner = createSpinner('⏱️ Give a sec...');
+
 try {
   fs.mkdirSync(directoryPath);
 
-  createFile(directoryPath, 'page.tsx');
-  createFile(directoryPath, 'layout.tsx');
+  createFile(directoryPath, 'page');
+  createFile(directoryPath, 'layout');
 
   if (detectFlag('--lg')) {
-    createFile(directoryPath, 'loading.tsx');
+    createFile(directoryPath, 'loading');
   }
+
+  spinner.success({ text: '✅ Success!' });
 } catch (error) {
-  console.log('Something went wrong!');
+  spinner.error({ text: 'Oops! Something went wrong!' });
   process.exit(1);
+}
+
+type FileName = 'page' | 'layout' | 'loading';
+
+export function createFile(dirPath: string, fileName: FileName) {
+  const templatePath = path.join(
+    fileURLToPath(new URL('templates', import.meta.url))
+  );
+
+  const sourceFileName = `${fileName}.js`;
+  const targetFileName = `${fileName}.tsx`;
+
+  const sourceFilePath = path.join(templatePath, sourceFileName);
+  const targetFilePath = path.join(dirPath, targetFileName);
+
+  const content = fs.readFileSync(sourceFilePath, 'utf-8');
+
+  fs.writeFileSync(targetFilePath, content);
 }

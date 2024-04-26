@@ -6,6 +6,7 @@
   "main": "dist/src/index.js",
   "bin": "dist/src/index.js",
   "scripts": {
+    "prebuild": "rimraf dist",
     "build": "tsc",
     "start": "node dist/src/index.js"
   },
@@ -18,5 +19,9 @@
   "devDependencies": {
     "@types/node": "^20.12.7",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "nanospinner": "^1.1.0",
+    "rimraf": "^5.0.5"
   }
 }
