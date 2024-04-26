@@ -11,7 +11,7 @@
     "start": "node dist/src/index.js"
   },
   "repository": {
-    "url": "https://github.com/johurul-haque/write-module"
+    "url": "https://github.com/johurul-haque/next-dir"
   },
   "keywords": [],
   "author": "Johurul Haque",
