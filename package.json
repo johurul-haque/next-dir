@@ -1,6 +1,6 @@
 {
   "name": "next-dir",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI tool for quickly creating folder based routes in NextJs app router.",
   "type": "module",
   "main": "dist/src/index.js",
