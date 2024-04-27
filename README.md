@@ -1,5 +1,5 @@
 # next-dir
-CLI tool for quickly creating folder-based routes in NextJs App router.
+CLI tool for creating route segments in NextJs projects.
 
 ## Quick start
 ```bash
