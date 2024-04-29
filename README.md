@@ -2,21 +2,22 @@
 CLI tool for creating route segments in NextJs projects.
 
 ## Quick start
-```bash
-# Install globally
-$ npm i -g next-dir
 
-# Then run the command at the root of your NextJs project
-$ next-dir [directory-name]
+Run the command at the root of your project.
+```bash
+npx next-dir [directory-name]
 ```
 
+Or if you prefer installing it globally
 ```bash
-# Or use the npx command without installing globally
-$ npx next-dir [directory-name]
+npm i -g next-dir
+
+next-dir [directory-name]
 ```
+
 This command will create a directory with the following files inside the app directory.
 
-```bash
+```ini
 ├── page.tsx
 ├── layout.tsx
 └── loading.tsx # Optional, specify using the --lg flag
